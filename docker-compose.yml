@@ -1,0 +1,12 @@
+version: '1'
+services:
+  application:
+    build: .
+    ports:
+      - "8080:8080"
+    links:
+      - redis
+  redis:
+    image: redis
+    expose:
+      - "6379"
